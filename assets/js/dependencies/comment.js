@@ -1342,7 +1342,7 @@ var CommentManager = (function() {
   CommentManager.prototype.init = function(){
     this.setBounds();
     if(this.filter == null) {
-      this.filter = new CommentFilter(); //Only create a filter if none exist
+      this.filter = new CommentFilter(); //Only create a hasKey if none exist
     }
   };
   CommentManager.prototype.time = function(time){

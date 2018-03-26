@@ -91,7 +91,7 @@
 
   /**
    * 轮询器
-   * 
+   *
    * @param function looper 轮询要做的事
    * @param number interval 轮询间隔
    * @param number times 轮询次数
@@ -235,9 +235,9 @@
   /**
    * 背景图片墙
    * 参考自：https://github.com/tregoning/photoTilt
-   * 
-   * @param {any} $el 
-   * @param {any} options 
+   *
+   * @param {any} $el
+   * @param {any} options
    */
   function Tilt($el, options) {
     this.options = $.extend({
@@ -369,8 +369,8 @@
           return PM.map.dtd;
         }).done(function() {
           var map = new AMap.Map('pnl-map',{
-            zoom: 17,
-            center: [115.977634, 29.709759]
+            zoom: 20,
+            center: [118.519766,37.472175]
           });
           var marker = new AMap.Marker({
             position: map.getCenter()
@@ -380,7 +380,7 @@
           // 设置label标签
           marker.setLabel({
             offset: new AMap.Pixel(-75, -30),
-            content: "PM Infinity婚礼于10月5日晚"
+            content: "我们的婚礼于04月21日中午"
           });
         }).fail(function() {
 
@@ -391,9 +391,9 @@
 
   /**
    * 下拉公告
-   * 
-   * @param {any} $el 
-   * @param {any} options 
+   *
+   * @param {any} $el
+   * @param {any} options
    */
   function PullDown($el, options) {
     this.options = $.extend({
@@ -493,10 +493,10 @@
 
   /**
    * 背景音乐
-   * 
-   * @param $ $btn 开关 
+   *
+   * @param $ $btn 开关
    * @param object options 配置
-   * @returns 
+   * @returns
    */
   function BGM($btn, options) {
     this.options = $.extend({
@@ -579,9 +579,9 @@
 
   /**
    * 文字转颜色
-   * 
-   * @param {any} str 
-   * @returns 
+   *
+   * @param {any} str
+   * @returns
    */
   function str2rgb(str) {
     var hash = 0;

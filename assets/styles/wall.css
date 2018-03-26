@@ -100,27 +100,27 @@
 
 .section-gallery .slide, #section2 {
   background-size: cover;
-  background-position: bottom center;
+  background-position: center center;
 }
 
 #slide1 {
-  background-image: url(/images/1-740.jpg);
+  background-image: url(/images/wall_1.jpg);
 }
 
 #slide2 {
-  background-image: url(/images/2-839.jpg);
+  background-image: url(/images/wall_2.jpg);
 }
 
 #slide3 {
-  background-image: url(/images/6-809.jpg);
+  background-image: url(/images/wall_3.jpg);
 }
 
 #slide4 {
-  background-image: url(/images/8-908.jpg);
+  background-image: url(/images/wall_4.jpg);
 }
 
 #slide5 {
-  background-image: url(/images/11-786.jpg);
+  background-image: url(/images/wall_5.jpg);
 }
 
 #section2 {

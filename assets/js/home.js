@@ -4,8 +4,8 @@
   PM.tilt.init();
 
   PM.bgm = new PM.BGM($('#bgm-audio'), {
-    src: '/audios/pm_bgm2.mp3',
-    autoplay: false
+    src: '/audios/bgm.mp3',
+    autoplay: true
   });
 
 
@@ -177,6 +177,24 @@
 
     $t.prop('disabled', true);
 
+    function haskey(text) {
+      var keywords = ['习近平', '党', '丑', '猥琐', '龌蹉', '死', '逼'] // 数组存放敏感关键词
+
+      for (var i = 0; i < keywords.length; i++) {
+        var reg = new RegExp(keywords[i], 'gi')
+        if (text.match(reg)) {
+          return true
+        }
+      }
+      return false
+    }
+    //敏感词限制
+    if (haskey(msg)) {
+      $ipt.val('').blur();
+      PM.toast('请注意用语~', 3000);
+      return
+    }
+
     PM.request({
       url: '/home/api_wish',
       type: 'POST',
@@ -187,10 +205,12 @@
     }).then(function(wish) {
       $ipt.val('').blur();
       // PM.board.pendingMsg.push(wish);
-      PM.toast('感谢您的祝福', 3000);
+      PM.toast('感谢您的祝福~', 3000);
     }).always(function() {
       $t.prop('disabled', false);
     });
+
+
   });
 
   $('.fullpage').on('touchmove', function(e) {
@@ -202,3 +222,5 @@
     PM.board.init($('#wish-board'));
   }
 }(jQuery, PM, Account));
+
+

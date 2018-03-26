@@ -1,5 +1,7 @@
 var Promise = require('bluebird');
 var _ = require('lodash');
+var haskey = require('../util/shield')
+
 
 module.exports = {
 
@@ -49,10 +51,20 @@ module.exports = {
     });
   },
 
+  //发送弹幕
   api_wish: function(req, res) {
     var accountID = req.param('accountID');
     var msg = req.param('msg');
     var type = req.param('type');
+
+    //敏感词限制
+    if (haskey(msg)) {
+      res.json({
+        status: 'failed',
+        error: '含有敏感词'
+      });
+      return
+    }
 
     Promise.try(function() {
       if (type == 'reaction') {
@@ -113,6 +125,7 @@ module.exports = {
 
     OAuthService.getClient().getAccessToken(code, function(err, token) {
       if (err || !token || !token.data || !token.data.openid) {
+        console.log(`err is : ${err}`)
         return res.redirect('/home/reauth' + (state ? ('?state=' + state) : ''));
       }
 
