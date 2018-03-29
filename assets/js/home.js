@@ -8,12 +8,6 @@
     autoplay: true
   });
 
-  var audio = document.getElementsByTagName('audio')
-  document.addEventListener("WeixinJSBridgeReady", function () {
-    audio.play();
-  }, false);
-
-
   var slick = $('.gallery').slick({
     arrows: false,
     infinite: true,
@@ -226,6 +220,8 @@
     PM.poller.poll();
     PM.board.init($('#wish-board'));
   }
+
+  $('#bgm-audio').trigger('click')
 }(jQuery, PM, Account));
 
 
