@@ -221,7 +221,11 @@
     PM.board.init($('#wish-board'));
   }
 
-  $('#bgm-audio').trigger('click')
+  wx.ready(function() {
+    $('#bgm-audio').click()
+    PM.bgm.play()
+  });
+
 }(jQuery, PM, Account));
 
 
