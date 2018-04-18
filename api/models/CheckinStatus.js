@@ -31,8 +31,8 @@ module.exports = {
       },
       getCheckinMsg: function(status) {
         var checkinMsg = {
-          'coming': '我来现场，你们一起来吧',
-          'present': '我在现场，这里太嗨了'
+          'coming': '我会去参加的~',
+          'present': '我在现场~'
         };
 
         return checkinMsg[status];
